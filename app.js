@@ -15,15 +15,12 @@ const app = Vue.createApp({
   },
   computed: {
     paragraphStyle() {
-      if (this.input === "user1") {
-        return "user1";
-      } else if (this.input === "user2") {
-        return "user2";
-      } else if (this.visibleParagraph) {
-        return "visible";
-      } else if (!this.visibleParagraph) {
-        return "hidden";
-      }
+      return {
+        user1: this.input === "user1",
+        user2: this.input === "user2",
+        visible: this.visibleParagraph,
+        hidden: !this.visibleParagraph
+      };
     }
   }
 });
