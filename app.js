@@ -1,12 +1,16 @@
 const app = Vue.createApp({
   data() {
     return {
-      input: ""
+      input: "",
+      visibleParagraph: true
     };
   },
   methods: {
     setInput(e) {
       this.input = e.target.value;
+    },
+    toggle() {
+      this.visibleParagraph = !this.visibleParagraph;
     }
   },
   computed: {
@@ -15,6 +19,10 @@ const app = Vue.createApp({
         return "user1";
       } else if (this.input === "user2") {
         return "user2";
+      } else if (this.visibleParagraph) {
+        return "visible";
+      } else if (!this.visibleParagraph) {
+        return "hidden";
       }
     }
   }
