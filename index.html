@@ -24,13 +24,13 @@
       <p :class="paragraphStyle">
         Style me!
       </p>
-      <button @click="toggle">Toggle Paragraph</button>
+      <button @click="toggle">Toggle Paragraph</button><br />
       <!-- 2) Use the "visible" and "hidden" classes to show/ hide the above paragraph -->
       <!-- Clicking the button should toggle between the two options -->
 
       <!-- 3) Add dynamic inline styling to the below paragraph and let the user enter a background-color -->
       <input type="text" @input="setInput" />
-      <p>Style me inline!</p>
+      <p :style="{backgroundColor: input}">Style me inline!</p>
     </section>
   </body>
 </html>
